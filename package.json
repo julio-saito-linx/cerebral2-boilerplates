@@ -1,0 +1,9 @@
+{
+  "name": "cerebral2-boilerplates",
+  "version": "0.1.0",
+  "description": "several cerebral boilerplates",
+  "main": "main.js",
+  "repository": "https://github.com/saitodisse/cerebral2-boilerplates",
+  "author": "Julio Saito",
+  "license": "Apache2"
+}
