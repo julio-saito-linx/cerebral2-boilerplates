@@ -37,15 +37,8 @@ git commit -m"[initial] add commom root config boilerplate files"
 
 ### install react-scripts
 
-yarn add react-scripts -D
-
-
-
-### install standard (optional)
-
-yarn add standard -D
-git add .
-git commit -m"[lint] add standard package"
+yarn add react-scripts standard -D
+yarn add react react-dom
 
 
 
