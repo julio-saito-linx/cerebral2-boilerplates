@@ -68,63 +68,56 @@ cd cerebral2-boilerplates
 
 
 
-### install create-react-app
+### create a new folder
 
 ```sh
-yarn
+rm -rf new-app
+mkdir -p new-app
+cp -Rv ./boilerplates/common-root/. new-app/
+cd new-app
 ```
 
-
-
-### create a new react app
-
-```sh
-create-react-app new-app
-```
 
 
 
 ### new git repository
 
 ```sh
-cd new-app
 git init
-git add .
-git commit -m"initial app"
 ```
 
 
 
-### replace commom root files
+
+### first commit
 
 ```sh
-cp -R ../boilerplates/common-root/* .
 git add .
-git commit -m"[root] add commom root config boilerplate files"
+git commit -m"[initial] add commom root config boilerplate files"
 ```
 
 
 
-### install standard (optional)
 
-_I recommend you use some [standard formatting tool](https://github.com/feross/standard#are-there-text-editor-plugins)_
-
-```sh
-yarn add standard -D
-git add .
-git commit -m"add standard package"
-```
-
-
-
-### install initial cerebral packages
+### add some packages
 
 ```sh
+yarn add react react-dom
+yarn add -D react-scripts standard
 yarn add -E cerebral@next function-tree@next cerebral-router@next
+
 git add .
 git commit -m"[cerebral] add cerebral packages"
 ```
 
+
+
+
+### back
+
+```sh
+cd ..
+```
 
 
 
@@ -135,63 +128,138 @@ git commit -m"[cerebral] add cerebral packages"
 
 ### 2.1) tutorial (last step)
 
+#### go to folder
+
+```sh
+cd new-app
+```
+
+
+
+#### add packages
+
 ```sh
 yarn add -E js-logger cerebral-provider-http@next
-git clone --depth=1 https://github.com/cerebral/cerebral /tmp/cerebral
+
 git add .
-git commit -m"[tutorial] add js-logger"
+git commit -m"[tutorial] add packages"
+```
+
+
+
+#### copy files
+
+```sh
+git clone --depth=1 https://github.com/cerebral/cerebral /tmp/cerebral
 
 rm -rf public
 cp -R /tmp/cerebral/docs/tutorial/public public/
 cp -R /tmp/cerebral/demos/forms-demo/public/index.html public/index.html
+
 rm -rf src
 cp -R /tmp/cerebral/docs/tutorial/DO_NOT_TOUCH/11/src src/
+
 git add .
 git commit -m"[tutorial] add example files"
 ```
 
 
+#### go back
+
+```sh
+cd ..
+```
+
+
 ### 2.2) cerebral-forms
+
+#### go to folder
+
+```sh
+cd new-app
+```
+
+
+
+#### add packages
 
 ```sh
 yarn add -E cerebral-forms@next aphrodite
-git clone --depth=1 https://github.com/cerebral/cerebral /tmp/cerebral
+
 git add .
-git commit -m"[cerebral-forms] add cerebral-forms and aphrodite packages"
+git commit -m"[cerebral-forms] add packages"
+```
+
+
+
+#### copy files
+
+
+```sh
+git clone --depth=1 https://github.com/cerebral/cerebral /tmp/cerebral
 
 rm -rf public
 cp -R /tmp/cerebral/demos/forms-demo/public public/
+
 rm -rf src
 cp -R /tmp/cerebral/demos/forms-demo/src src/
+
 git add .
 git commit -m"[cerebral-forms] cerebral-forms demo"
 ```
 
 
 
+#### go back
+
+```sh
+cd ..
+```
+
+
+
 ### 2.3) demo (firebase example)
+
+#### go to folder
+
+```sh
+cd new-app
+```
+
+#### copy files
 
 ```sh
 git clone --depth=1 https://github.com/cerebral/cerebral /tmp/cerebral
-git add .
-git commit -m"[demo] add cerebral-forms and aphrodite packages"
 
 cp /tmp/cerebral/demos/demo/database.rules.json  database.rules.json
 cp /tmp/cerebral/demos/demo/firebase.json        firebase.json
 cp /tmp/cerebral/demos/demo/storage.rules        storage.rules
 
-cp /tmp/cerebral/demos/demo/package.json         package.json
-# remove line with @cerebral/monorepo devDependency
-sed -i '/monorepo/d' ./package.json
-
 rm -rf public
 cp -R /tmp/cerebral/demos/demo/public public/
 rm -rf src
 cp -R /tmp/cerebral/demos/demo/src src/
+
+cp /tmp/cerebral/demos/demo/package.json         package.json
+# remove line with @cerebral/monorepo devDependency
+sed -i '/monorepo/d' ./package.json
+```
+
+
+#### add react-scripts
+
+```sh
+yarn
+yarn add react-scripts
+
 git add .
 git commit -m"[demo] cerebral-forms demo"
+```
 
-yarn
+#### go back
+
+```sh
+cd ..
 ```
 
 
