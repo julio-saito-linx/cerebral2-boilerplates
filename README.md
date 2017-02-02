@@ -55,6 +55,8 @@ continue on step 3
 
 --------------
 
+
+
 # Step by Step
 
 ## 1) prepare your new app
@@ -263,16 +265,25 @@ cd ..
 ```
 
 
+
+
+
 ----------
 
 
+
+
 # 3) Final Steps
+
+
 
 ### test your app
 
 ```sh
 yarn start
 ```
+
+
 
 ### move your 'new-app' to your personal projects folder
 
@@ -282,17 +293,21 @@ mv new-app ../new-project-name
 cd ../new-project-name
 ```
 
+
+
 ### edit package json
 
 ```sh
 yarn init
 ```
 
+
+
 ### push to a remote repo
 
 ```sh
 git remote set-url origin https://github.com/USERNAME/REPO
 git push
-# git push -f # CAUTION: --force is destructive
+# git push -f # CAUTION: remember that --force is destructive
 ```
 
