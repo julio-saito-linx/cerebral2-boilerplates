@@ -1,3 +1,7 @@
+#!/bin/bash
+
+set -e
+
 ### install create-react-app
 
 #yarn
@@ -13,7 +17,9 @@
 
 ### create a new folder
 
-mkdir new-app
+rm -rf new-app
+mkdir -p new-app
+cp -Rv ./boilerplates/common-root/. new-app/
 cd new-app
 
 
@@ -26,24 +32,26 @@ git init
 
 
 
-### initial files
+### first commit
 
-cp -R ../boilerplates/common-root/* .
 git add .
 git commit -m"[initial] add commom root config boilerplate files"
 
 
 
 
-### install react-scripts
+### add some packages
 
-yarn add react-scripts standard -D
 yarn add react react-dom
-
-
-
-### install initial cerebral packages
-
+yarn add -D react-scripts standard
 yarn add -E cerebral@next function-tree@next cerebral-router@next
+
 git add .
 git commit -m"[cerebral] add cerebral packages"
+
+
+
+
+### back
+
+cd ..

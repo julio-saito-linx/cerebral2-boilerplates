@@ -38,12 +38,12 @@
 ### choose your template cerebral project
 
 ```sh
-# demo
-./scripts/demo.sh
-# demo
-./scripts/demo.sh
-# demo
-./scripts/demo.sh
+# tutorial (last step)
+/scripts/tutorial.sh
+# cerebral-forms
+/scripts/cerebral-forms.sh
+# demo (firebase integration)
+/scripts/demo.sh
 ```
 
 
