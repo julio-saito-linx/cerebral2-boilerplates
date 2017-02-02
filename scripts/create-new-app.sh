@@ -1,26 +1,15 @@
 #!/bin/bash
 
-set -e
-
-### install create-react-app
-
-#yarn
-
-
-
-### create a new react app
-
-#create-react-app new-app
-
+set -o verbose
 
 
 
 ### create a new folder
 
-rm -rf new-app
-mkdir -p new-app
-cp -Rv ./boilerplates/common-root/. new-app/
-cd new-app
+rm -rf /tmp/new-app
+mkdir -p /tmp/new-app
+cp -Rv ./boilerplates/common-root/. /tmp/new-app/
+cd /tmp/new-app
 
 
 
@@ -49,9 +38,3 @@ yarn add -E cerebral@next function-tree@next cerebral-router@next
 git add .
 git commit -m"[cerebral] add cerebral packages"
 
-
-
-
-### back
-
-cd ..

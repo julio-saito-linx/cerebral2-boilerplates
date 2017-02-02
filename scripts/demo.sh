@@ -1,13 +1,15 @@
 #!/bin/bash
 
-set -e
+set -o verbose
 
-cd new-app
+cd /tmp/new-app
 
 
 
 # copy files
-git clone --depth=1 https://github.com/cerebral/cerebral /tmp/cerebral
+if [ ! -d "/tmp/cerebral" ]; then
+  git clone --depth=1 https://github.com/cerebral/cerebral /tmp/cerebral
+fi
 
 cp /tmp/cerebral/demos/demo/database.rules.json  database.rules.json
 cp /tmp/cerebral/demos/demo/firebase.json        firebase.json
@@ -28,5 +30,3 @@ git add .
 git commit -m"[demo] cerebral-forms demo"
 
 
-
-cd ..

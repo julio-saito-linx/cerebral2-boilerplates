@@ -1,14 +1,12 @@
-# cerebral boilerplates:
+# easy Cerebral 2 boilerplates:
 
-
-
+Some steps to get going with a cerebral 2 app.
 
 <!-- MarkdownTOC -->
 
 - [0\) pre-requirements](#0-pre-requirements)
-- [1,2\) install with shell script](#12-install-with-shell-script)
+- [1,2\) easy way - run two scripts](#12-easy-way---run-two-scripts)
 - [Step by Step](#step-by-step)
-    - [1\) prepare your new app](#1-prepare-your-new-app)
     - [2\) Choose an initial cerebral example](#2-choose-an-initial-cerebral-example)
 - [3\) Final Steps](#3-final-steps)
 
@@ -16,17 +14,28 @@
 
 
 
-
-
 # 0) pre-requirements
+
+### install node and yarn
 
 - install [node](https://nodejs.org/en/)
 - install [yarn](https://yarnpkg.com/)
 
+### clone this repo
+
+```sh
+git clone https://github.com/saitodisse/cerebral2-boilerplates
+cd cerebral2-boilerplates
+```
+
+
+
+
 --------
 
 
-# 1,2) install with shell script
+
+# 1,2) easy way - run two scripts
 
 ### create a new app with create-react-app
 
@@ -35,15 +44,17 @@
 ```
 
 
-### choose your template cerebral project
+### choose your cerebral project starting example
 
 ```sh
 # tutorial (last step)
-/scripts/tutorial.sh
+./scripts/tutorial.sh
+
 # cerebral-forms
-/scripts/cerebral-forms.sh
+./scripts/cerebral-forms.sh
+
 # demo (firebase integration)
-/scripts/demo.sh
+./scripts/demo.sh
 ```
 
 
@@ -59,24 +70,13 @@ continue on step 3
 
 # Step by Step
 
-## 1) prepare your new app
-
-### clone this repo
-
-```sh
-git clone https://github.com/saitodisse/cerebral2-boilerplates
-cd cerebral2-boilerplates
-```
-
-
-
 ### create a new folder
 
 ```sh
-rm -rf new-app
-mkdir -p new-app
-cp -Rv ./boilerplates/common-root/. new-app/
-cd new-app
+rm -rf /tmp/new-app
+mkdir -p /tmp/new-app
+cp -Rv ./boilerplates/common-root/. /tmp/new-app/
+cd /tmp/new-app
 ```
 
 
@@ -115,25 +115,24 @@ git commit -m"[cerebral] add cerebral packages"
 
 
 
-### back
-
-```sh
-cd ..
-```
-
-
 
 -------
 
 
+
+
+
 ## 2) Choose an initial cerebral example
+
+
+
 
 ### 2.1) tutorial (last step)
 
 #### go to folder
 
 ```sh
-cd new-app
+cd /tmp/new-app
 ```
 
 
@@ -166,11 +165,10 @@ git commit -m"[tutorial] add example files"
 ```
 
 
-#### go back
 
-```sh
-cd ..
-```
+
+
+
 
 
 ### 2.2) cerebral-forms
@@ -178,7 +176,7 @@ cd ..
 #### go to folder
 
 ```sh
-cd new-app
+cd /tmp/new-app
 ```
 
 
@@ -212,11 +210,8 @@ git commit -m"[cerebral-forms] cerebral-forms demo"
 
 
 
-#### go back
 
-```sh
-cd ..
-```
+
 
 
 
@@ -225,7 +220,7 @@ cd ..
 #### go to folder
 
 ```sh
-cd new-app
+cd /tmp/new-app
 ```
 
 #### copy files
@@ -258,12 +253,49 @@ git add .
 git commit -m"[demo] cerebral-forms demo"
 ```
 
-#### go back
+
+
+
+
+
+
+
+### 2.4) todomvc
+
+#### go to folder
 
 ```sh
-cd ..
+cd /tmp/new-app
 ```
 
+#### add packages
+
+```sh
+# add packages
+yarn add classnames react react-dom todomvc-app-css todomvc-common uuid
+
+git add .
+git commit -m"[todomvc] add packages"
+```
+
+
+#### copy files
+
+```sh
+# copy files
+if [ ! -d "/tmp/cerebral" ]; then
+  git clone --depth=1 https://github.com/cerebral/cerebral /tmp/cerebral
+fi
+
+rm -rf public
+cp -R /tmp/cerebral/demos/todomvc/public public/
+
+rm -rf src
+cp -R /tmp/cerebral/demos/todomvc/src src/
+
+git add .
+git commit -m"[todomvc] add example files"
+```
 
 
 
@@ -285,12 +317,10 @@ yarn start
 
 
 
-### move your 'new-app' to your personal projects folder
+### move your '/tmp/new-app' to your personal projects folder
 
 ```sh
-cd ..
-mv new-app ../new-project-name
-cd ../new-project-name
+mv /tmp/new-app ~/My-Projects/SOME_NEW_PROJECT_FOLDER_NAME
 ```
 
 
@@ -298,6 +328,7 @@ cd ../new-project-name
 ### edit package json
 
 ```sh
+# in your porject's folder
 yarn init
 ```
 

@@ -1,8 +1,8 @@
 #!/bin/bash
 
-set -e
+set -o verbose
 
-cd new-app
+cd /tmp/new-app
 
 
 
@@ -15,7 +15,9 @@ git commit -m"[cerebral-forms] add packages"
 
 
 # copy files
-git clone --depth=1 https://github.com/cerebral/cerebral /tmp/cerebral
+if [ ! -d "/tmp/cerebral" ]; then
+  git clone --depth=1 https://github.com/cerebral/cerebral /tmp/cerebral
+fi
 
 rm -rf public
 cp -R /tmp/cerebral/demos/forms-demo/public public/
@@ -26,6 +28,3 @@ cp -R /tmp/cerebral/demos/forms-demo/src src/
 git add .
 git commit -m"[cerebral-forms] cerebral-forms demo"
 
-
-
-cd ..
