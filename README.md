@@ -5,11 +5,12 @@
 
 <!-- MarkdownTOC -->
 
-- [before start](#before-start)
-- [create-react-app boilerplate](#create-react-app-boilerplate)
-- [Initial examples](#initial-examples)
-    - [tutorial \(last step\)](#tutorial-last-step)
-    - [cerebral-forms](#cerebral-forms)
+- [0\) pre-requirements](#0-pre-requirements)
+- [1\) prepare your new app](#1-prepare-your-new-app)
+- [2\) Choose an initial cerebral example](#2-choose-an-initial-cerebral-example)
+    - [2.1\) tutorial \(last step\)](#21-tutorial-last-step)
+    - [2.2\) cerebral-forms](#22-cerebral-forms)
+- [3\) Final Steps](#3-final-steps)
 
 <!-- /MarkdownTOC -->
 
@@ -17,7 +18,7 @@
 
 
 
-# before start
+# 0) pre-requirements
 
 - install [node](https://nodejs.org/en/)
 - install [yarn](https://yarnpkg.com/)
@@ -28,7 +29,7 @@
 
 
 
-# create-react-app boilerplate
+# 1) prepare your new app
 
 ### install create-react-app
 
@@ -93,9 +94,9 @@ git commit -m"[cerebral] add cerebral packages"
 -------
 
 
-# Initial examples
+# 2) Choose an initial cerebral example
 
-## tutorial (last step)
+## 2.1) tutorial (last step)
 
 ```sh
 yarn add -E js-logger cerebral-provider-http@next
@@ -113,7 +114,7 @@ git commit -m"[tutorial] add example files"
 ```
 
 
-## cerebral-forms
+## 2.2) cerebral-forms
 
 ```sh
 yarn add -E cerebral-forms@next aphrodite
@@ -131,8 +132,33 @@ git commit -m"[cerebral-forms] cerebral-forms demo"
 
 
 
+# 3) Final Steps
+
 ### test your app
 
 ```sh
 yarn start
 ```
+
+### move your 'new-app' to your personal projects folder
+
+```sh
+cd ..
+mv new-app ../new-project-name
+cd ../new-project-name
+```
+
+### edit package json
+
+```sh
+yarn init
+```
+
+### push to a remote repo
+
+```sh
+git remote set-url origin https://github.com/USERNAME/REPO
+git push
+# git push -f # CAUTION: --force is destructive
+```
+
