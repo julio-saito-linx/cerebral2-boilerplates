@@ -7,14 +7,9 @@
 
 - [before start](#before-start)
 - [create-react-app boilerplate](#create-react-app-boilerplate)
-    - [install create-react-app](#install-create-react-app)
-    - [create a new react app](#create-a-new-react-app)
-    - [new git repository](#new-git-repository)
-    - [install standard](#install-standard)
-    - [replace commom root files](#replace-commom-root-files)
-    - [install initial cerebral packages](#install-initial-cerebral-packages)
-    - [get cerebral-forms-example](#get-cerebral-forms-example)
-    - [test your app](#test-your-app)
+- [Initial examples](#initial-examples)
+    - [tutorial \(last step\)](#tutorial-last-step)
+    - [cerebral-forms](#cerebral-forms)
 
 <!-- /MarkdownTOC -->
 
@@ -22,7 +17,7 @@
 
 
 
-## before start
+# before start
 
 - install [node](https://nodejs.org/en/)
 - install [yarn](https://yarnpkg.com/)
@@ -33,7 +28,7 @@
 
 
 
-## create-react-app boilerplate
+# create-react-app boilerplate
 
 ### install create-react-app
 
@@ -79,7 +74,7 @@ git commit -m"add standard package"
 ```sh
 cp -R ../boilerplates/common-root/* .
 git add .
-git commit -m"commom root"
+git commit -m"[root] add commom root config boilerplate files"
 ```
 
 
@@ -89,25 +84,49 @@ git commit -m"commom root"
 ```sh
 yarn add -E cerebral@next function-tree@next cerebral-router@next
 git add .
-git commit -m"add cerebral packages"
+git commit -m"[cerebral] add cerebral packages"
 ```
 
 
 
-### get cerebral-forms-example
+
+-------
+
+
+# Initial examples
+
+## tutorial (last step)
+
+```sh
+yarn add -E js-logger cerebral-provider-http@next
+git clone --depth=1 https://github.com/cerebral/cerebral /tmp/cerebral
+git add .
+git commit -m"[tutorial] add js-logger"
+
+rm -rf public
+cp -R /tmp/cerebral/docs/tutorial/public public/
+cp -R /tmp/cerebral/demos/forms-demo/public/index.html public/index.html
+rm -rf src
+cp -R /tmp/cerebral/docs/tutorial/DO_NOT_TOUCH/11/src src/
+git add .
+git commit -m"[tutorial] add example files"
+```
+
+
+## cerebral-forms
 
 ```sh
 yarn add -E cerebral-forms@next aphrodite
 git clone --depth=1 https://github.com/cerebral/cerebral /tmp/cerebral
 git add .
-git commit -m"add cerebral-forms and aphrodite packages"
+git commit -m"[cerebral-forms] add cerebral-forms and aphrodite packages"
 
 rm -rf public
 cp -R /tmp/cerebral/demos/forms-demo/public public/
 rm -rf src
 cp -R /tmp/cerebral/demos/forms-demo/src src/
 git add .
-git commit -m"cerebral-forms demo"
+git commit -m"[cerebral-forms] cerebral-forms demo"
 ```
 
 
