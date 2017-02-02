@@ -6,10 +6,10 @@
 <!-- MarkdownTOC -->
 
 - [0\) pre-requirements](#0-pre-requirements)
-- [1\) prepare your new app](#1-prepare-your-new-app)
-- [2\) Choose an initial cerebral example](#2-choose-an-initial-cerebral-example)
-    - [2.1\) tutorial \(last step\)](#21-tutorial-last-step)
-    - [2.2\) cerebral-forms](#22-cerebral-forms)
+- [1,2\) install with shell script](#12-install-with-shell-script)
+- [Step by Step](#step-by-step)
+    - [1\) prepare your new app](#1-prepare-your-new-app)
+    - [2\) Choose an initial cerebral example](#2-choose-an-initial-cerebral-example)
 - [3\) Final Steps](#3-final-steps)
 
 <!-- /MarkdownTOC -->
@@ -26,10 +26,47 @@
 --------
 
 
+# 1,2) install with shell script
+
+### create a new app with create-react-app
+
+```sh
+./scripts/create-new-app.sh
+```
+
+
+### choose your template cerebral project
+
+```sh
+# demo
+./scripts/demo.sh
+# demo
+./scripts/demo.sh
+# demo
+./scripts/demo.sh
+```
+
+
+### go to step 3
+
+continue on step 3
 
 
 
-# 1) prepare your new app
+--------------
+
+# Step by Step
+
+## 1) prepare your new app
+
+### clone this repo
+
+```sh
+git clone https://github.com/saitodisse/cerebral2-boilerplates
+cd cerebral2-boilerplates
+```
+
+
 
 ### install create-react-app
 
@@ -58,7 +95,17 @@ git commit -m"initial app"
 
 
 
-### install standard
+### replace commom root files
+
+```sh
+cp -R ../boilerplates/common-root/* .
+git add .
+git commit -m"[root] add commom root config boilerplate files"
+```
+
+
+
+### install standard (optional)
 
 _I recommend you use some [standard formatting tool](https://github.com/feross/standard#are-there-text-editor-plugins)_
 
@@ -66,16 +113,6 @@ _I recommend you use some [standard formatting tool](https://github.com/feross/s
 yarn add standard -D
 git add .
 git commit -m"add standard package"
-```
-
-
-
-### replace commom root files
-
-```sh
-cp -R ../boilerplates/common-root/* .
-git add .
-git commit -m"[root] add commom root config boilerplate files"
 ```
 
 
@@ -94,9 +131,9 @@ git commit -m"[cerebral] add cerebral packages"
 -------
 
 
-# 2) Choose an initial cerebral example
+## 2) Choose an initial cerebral example
 
-## 2.1) tutorial (last step)
+### 2.1) tutorial (last step)
 
 ```sh
 yarn add -E js-logger cerebral-provider-http@next
@@ -114,7 +151,7 @@ git commit -m"[tutorial] add example files"
 ```
 
 
-## 2.2) cerebral-forms
+### 2.2) cerebral-forms
 
 ```sh
 yarn add -E cerebral-forms@next aphrodite
@@ -130,6 +167,35 @@ git add .
 git commit -m"[cerebral-forms] cerebral-forms demo"
 ```
 
+
+
+### 2.3) demo (firebase example)
+
+```sh
+git clone --depth=1 https://github.com/cerebral/cerebral /tmp/cerebral
+git add .
+git commit -m"[demo] add cerebral-forms and aphrodite packages"
+
+cp /tmp/cerebral/demos/demo/database.rules.json  database.rules.json
+cp /tmp/cerebral/demos/demo/firebase.json        firebase.json
+cp /tmp/cerebral/demos/demo/storage.rules        storage.rules
+
+cp /tmp/cerebral/demos/demo/package.json         package.json
+# remove line with @cerebral/monorepo devDependency
+sed -i '/monorepo/d' ./package.json
+
+rm -rf public
+cp -R /tmp/cerebral/demos/demo/public public/
+rm -rf src
+cp -R /tmp/cerebral/demos/demo/src src/
+git add .
+git commit -m"[demo] cerebral-forms demo"
+
+yarn
+```
+
+
+----------
 
 
 # 3) Final Steps
