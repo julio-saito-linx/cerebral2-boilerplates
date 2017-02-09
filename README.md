@@ -50,6 +50,9 @@ cd cerebral2-boilerplates
 # tutorial (last step)
 ./scripts/tutorial.sh
 
+# todomvc
+./scripts/todomvc.sh
+
 # cerebral-forms
 ./scripts/cerebral-forms.sh
 
