@@ -22,7 +22,7 @@ fi
 
 rm -rf public
 cp -R /tmp/cerebral/docs/tutorial/public public/
-cp -R /tmp/cerebral/demos/forms-demo/public/index.html public/index.html
+cp -R /tmp/cerebral/docs/tutorial/DO_NOT_TOUCH/index.html public/index.html
 
 rm -rf src
 cp -R /tmp/cerebral/docs/tutorial/DO_NOT_TOUCH/11/src src/
