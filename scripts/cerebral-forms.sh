@@ -7,7 +7,7 @@ cd /tmp/new-app
 
 
 # add packages
-yarn add -E cerebral-forms@next aphrodite
+yarn add -E @cerebral/forms aphrodite
 
 git add .
 git commit -m"[cerebral-forms] add packages"
@@ -20,10 +20,10 @@ if [ ! -d "/tmp/cerebral" ]; then
 fi
 
 rm -rf public
-cp -R /tmp/cerebral/demos/forms-demo/public public/
+cp -R /tmp/cerebral/packages/demos/forms-demo/public public/
 
 rm -rf src
-cp -R /tmp/cerebral/demos/forms-demo/src src/
+cp -R /tmp/cerebral/packages/demos/forms-demo/src src/
 
 git add .
 git commit -m"[cerebral-forms] cerebral-forms demo"

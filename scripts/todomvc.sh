@@ -20,10 +20,10 @@ if [ ! -d "/tmp/cerebral" ]; then
 fi
 
 rm -rf public
-cp -R /tmp/cerebral/demos/todomvc/public public/
+cp -R /tmp/cerebral/packages/demos/todomvc/public public/
 
 rm -rf src
-cp -R /tmp/cerebral/demos/todomvc/src src/
+cp -R /tmp/cerebral/packages/demos/todomvc/src src/
 
 git add .
 git commit -m"[todomvc] add example files"

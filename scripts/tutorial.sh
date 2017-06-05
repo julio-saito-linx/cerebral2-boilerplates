@@ -7,7 +7,7 @@ cd /tmp/new-app
 
 
 # add packages
-yarn add -E cerebral-provider-http@next
+yarn add -E @cerebral/http
 yarn add js-logger
 
 git add .

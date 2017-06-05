@@ -33,7 +33,7 @@ git commit -m"[initial] add commom root config boilerplate files"
 
 yarn add react react-dom
 yarn add -D react-scripts standard
-yarn add -E cerebral@next function-tree@next cerebral-router@next
+yarn add -E cerebral@beta @cerebral/router
 
 git add .
 git commit -m"[cerebral] add cerebral packages"

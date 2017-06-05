@@ -58,6 +58,9 @@ cd cerebral2-boilerplates
 
 # demo (firebase integration)
 ./scripts/demo.sh
+
+# universal
+./scripts/universal.sh
 ```
 
 
@@ -109,7 +112,7 @@ git commit -m"[initial] add commom root config boilerplate files"
 ```sh
 yarn add react react-dom
 yarn add -D react-scripts standard
-yarn add -E cerebral@next function-tree@next cerebral-router@next
+yarn add -E cerebral@beta @cerebral/router
 
 git add .
 git commit -m"[cerebral] add cerebral packages"
@@ -143,7 +146,7 @@ cd /tmp/new-app
 #### add packages
 
 ```sh
-yarn add -E js-logger cerebral-provider-http@next
+yarn add -E js-logger @cerebral/http
 
 git add .
 git commit -m"[tutorial] add packages"
@@ -158,7 +161,7 @@ git clone --depth=1 https://github.com/cerebral/cerebral /tmp/cerebral
 
 rm -rf public
 cp -R /tmp/cerebral/docs/tutorial/public public/
-cp -R /tmp/cerebral/demos/forms-demo/public/index.html public/index.html
+cp -R /tmp/cerebral/packages/demos/forms-demo/public/index.html public/index.html
 
 rm -rf src
 cp -R /tmp/cerebral/docs/tutorial/DO_NOT_TOUCH/11/src src/
@@ -187,7 +190,7 @@ cd /tmp/new-app
 #### add packages
 
 ```sh
-yarn add -E cerebral-forms@next aphrodite
+yarn add -E @cerebral/forms aphrodite
 
 git add .
 git commit -m"[cerebral-forms] add packages"
@@ -202,10 +205,10 @@ git commit -m"[cerebral-forms] add packages"
 git clone --depth=1 https://github.com/cerebral/cerebral /tmp/cerebral
 
 rm -rf public
-cp -R /tmp/cerebral/demos/forms-demo/public public/
+cp -R /tmp/cerebral/packages/demos/forms-demo/public public/
 
 rm -rf src
-cp -R /tmp/cerebral/demos/forms-demo/src src/
+cp -R /tmp/cerebral/packages/demos/forms-demo/src src/
 
 git add .
 git commit -m"[cerebral-forms] cerebral-forms demo"
@@ -231,16 +234,16 @@ cd /tmp/new-app
 ```sh
 git clone --depth=1 https://github.com/cerebral/cerebral /tmp/cerebral
 
-cp /tmp/cerebral/demos/demo/database.rules.json  database.rules.json
-cp /tmp/cerebral/demos/demo/firebase.json        firebase.json
-cp /tmp/cerebral/demos/demo/storage.rules        storage.rules
+cp /tmp/cerebral/packages/demos/demo/database.rules.json  database.rules.json
+cp /tmp/cerebral/packages/demos/demo/firebase.json        firebase.json
+cp /tmp/cerebral/packages/demos/demo/storage.rules        storage.rules
 
 rm -rf public
-cp -R /tmp/cerebral/demos/demo/public public/
+cp -R /tmp/cerebral/packages/demos/demo/public public/
 rm -rf src
-cp -R /tmp/cerebral/demos/demo/src src/
+cp -R /tmp/cerebral/packages/demos/demo/src src/
 
-cp /tmp/cerebral/demos/demo/package.json         package.json
+cp /tmp/cerebral/packages/demos/demo/package.json         package.json
 # remove line with @cerebral/monorepo devDependency
 sed -i '/monorepo/d' ./package.json
 ```
@@ -291,10 +294,10 @@ if [ ! -d "/tmp/cerebral" ]; then
 fi
 
 rm -rf public
-cp -R /tmp/cerebral/demos/todomvc/public public/
+cp -R /tmp/cerebral/packages/demos/todomvc/public public/
 
 rm -rf src
-cp -R /tmp/cerebral/demos/todomvc/src src/
+cp -R /tmp/cerebral/packages/demos/todomvc/src src/
 
 git add .
 git commit -m"[todomvc] add example files"
