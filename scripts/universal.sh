@@ -4,18 +4,18 @@ set -o verbose
 
 cd /tmp/new-app
 
-git add .
-git commit -m"[cerebral-forms] add packages"
-
 # copy files
 if [ ! -d "/tmp/cerebral" ]; then
   git clone --depth=1 https://github.com/cerebral/cerebral /tmp/cerebral
 fi
 
-# add missing packages
-yarn add babel-core@7 babel-loader babel-preset-es2015 babel-preset-react -D
+cp -R /tmp/cerebral/packages/demos/universal/* .
 
 git add .
-git commit -m"[universal] universal full demo"
+git commit -m"[universal] initial files"
 
-yarn start
+# add missing packages
+yarn add babel-core@6.24.1 babel-loader babel-preset-es2015 babel-preset-react -D
+
+git add .
+git commit -m"[universal] add missing packages"
